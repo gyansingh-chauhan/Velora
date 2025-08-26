@@ -1,0 +1,51 @@
+<%layout("/layouts/boilerplate")-%>
+
+<body>
+    
+    <div class="container ">
+        <div class="row">
+        
+        <div class="col-8 offset-2">
+            <h2>Create a new listing</h2>
+         <form method="post" action="/listing" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input class="form-control" type="text" name="title" placeholder="title" required>
+        <div class="invalid-feedback">
+      Please Enter a valid Title.
+    </div>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" type="text" name="description" placeholder="description" required></textarea>
+            <div class="invalid-feedback">Please Enter a valid and short description.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="filename">image-Url</label>
+            <input class="form-control" type="text" name="filename" placeholder="image-Url" required>
+            <div class="invalid-feedback">Please Enter a valid Url.</div>
+        </div>
+        <div class="row">
+        <div class=" col-6 mb-3">
+            <label class="form-label" for="price">Price</label>
+            <input class="form-control" type="text" name="price" placeholder="price" required>
+            
+        </div>
+        <div class="col-6 mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control" type="text" name="location" placeholder="location" required>
+            <div class="invalid-feedback"> Enter a valid location.</div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="country">Country</label>
+            <input class="form-control" type="text" name="country" placeholder="country" required>
+            <div class="invalid-feedback">Enter a valid Country.</div>
+        </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    </div>
+    </div>
+    </div>
+</body>

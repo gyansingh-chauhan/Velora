@@ -1,0 +1,50 @@
+<%layout("/layouts/boilerplate")-%>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1>Edit the required field</h1>
+    <form method="post" action="/listing/<%=newData._id%>?_method=PUT" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input required class="form-control" type="text" name="title" placeholder="title" value="<%=newData.title%>">
+            <div class="invalid-feedback">Please Enter a valid title.</div>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <input required class="form-control" type="text" name="description" placeholder="description" value="<%=newData.description%>">
+            <div class="invalid-feedback">Please Enter a valid Description.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="imageUrl"> Image-url </label>
+            <input required class="form-control" type="text" name="imageUrl" placeholder="image" value="<%=newData.image.url%>">
+            <div class="invalid-feedback">Please Enter a valid Url.</div>
+        </div>
+
+
+        <div class="row">
+             <div class="mb-3 col-6">
+            <label class="form-label" for="price">Price</label>
+            <input required class="form-control" type="number" name="price" placeholder="price" value="<%=newData.price%>">
+            <div class="invalid-feedback"> Please Enter a valid price.</div>
+        </div>
+        <div class="mb-3 col-6">
+            <label class="form-label" for="location">Location</label>
+            <input required class="form-control" type="text" name="location" placeholder="location" value="<%=newData.location%>">
+            <div class="invalid-feedback">Please Enter a valid location.</div>
+        </div>
+        </div>
+       
+        <div class="mb-3">
+            <label class="form-label" for="country">Country</label>
+            <input required class="form-control" type="text" name="country" placeholder="country" value="<%=newData.country%>">
+            <div class="invalid-feedback">Please Enter a valid country.</div>
+        </div>
+        <button class="btn btn-primary" type="submit">Edit</button>
+        </div>
+        </div>
+        </div>
+    </form>
+</body>
