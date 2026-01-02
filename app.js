@@ -8,6 +8,7 @@ const ejsMate=require("ejs-mate");
 const mongo_url="mongodb://127.0.0.1:27017/velora";
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
+const session=require("express-session");
 
 main().then(()=>{
     console.log("Connected to DB")
@@ -25,6 +26,12 @@ app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
+const sessionOptions={
+    secret:"secretCode",
+    resave:false,
+    saveUninitialized:true,
+}
+app.use(session(sessionOptions));
 
 app.get("/",(req,res)=>{
     res.send("I am at root");
