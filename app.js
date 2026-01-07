@@ -66,7 +66,7 @@ app.use("/logout",logoutRouter);
 
 
 app.get("/",(req,res)=>{
-    res.send("I am at root");
+    res.render("listing/home");
 })
 
 /* app.use("/demoUser",async (req,res)=>{
@@ -86,34 +86,10 @@ app.get("/allListing",
 }))
 
 
-
-
-
-
-
-
-
-
-
-
-
 app.use((err,req,res,next)=>{
     const {statusCode,message}=err;
     res.status(404).send(message);
 })
-
-
-/* app.get("/testListings", async (req,res)=>{
-    let sampleListing= new Listing({
-    title:"My new villa",
-    description:"By the beach",
-    price:1200,
-    location:"Calangute, Goa",
-    country:"India",
-    });
-    await sampleListing.save();
-    res.send("new listing added successfully");
-}) */
 
 
 
